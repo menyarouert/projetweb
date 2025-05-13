@@ -1,0 +1,471 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* 1. Header image de fond */
+header {
+  height: 100px;
+  width: 100%;
+  background-image: url('images/capture-ecran.png');
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+}
+
+/* 2. Logo + Search */
+.logo-search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f5f5f5;
+  width: 100%;
+  box-sizing: border-box;
+  gap: 20px;
+}
+
+.logo {
+  height: 100px;
+}
+
+/* Search bar */
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  background-color: #eee;
+  width: 300px;
+}
+
+.search-button {
+  padding: 10px 14px;
+  background-color: #ccc;
+  border: 1px solid #ccc;
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+/* 3. Navbar */
+.navbar {
+  width: 100%;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  gap: 10px;
+}
+
+.navbar li {
+  margin: 0;
+  flex: 1;
+}
+
+.navbar a {
+  display: block;
+  padding: 12px 18px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+/* Couleurs */
+.navbar a.blue {
+  background-color: #292a86;
+}
+
+.navbar a.red {
+  background-color: #ff0000;
+}
+
+.navbar a.yellow {
+  background-color: #fff200;
+  color: black;
+}
+
+.navbar a.green {
+  background-color: #006400;
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+  padding: 12px;
+  background-color: #292a86;
+}
+
+/* 4. Premier carrousel */
+.slider {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transition: left 0.5s ease-in-out;
+}
+
+.slider img.active {
+  left: 0;
+}
+
+.slider img.prev {
+  left: -100%;
+}
+
+/* 5. Features (icônes et textes, sur une ligne, fixes) */
+.features {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+  gap: 30px;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 120px;
+}
+
+.feature-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.feature-item p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+/* 6. Products (8 éléments, 4 en haut, 4 en bas) */
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.product-item {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.product-item h3 {
+  font-size: 16px;
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+.price {
+  font-size: 14px;
+  color: #e60000;
+  margin-bottom: 10px;
+}
+
+.product-buttons {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.product-item:hover .product-buttons {
+  opacity: 1;
+}
+
+.add-to-cart, .details {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart {
+  background-color: #292a86;
+  color: white;
+}
+
+.add-to-cart:hover {
+  background-color: #1e1f6b;
+}
+
+.details {
+  background-color: #ccc;
+  color: #333;
+}
+
+.details:hover {
+  background-color: #b3b3b3;
+}
+
+/* 7. Second carrousel (7 photos, 2 secondes) */
+.secondary-slider {
+  width: 80%;
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+  margin: 20px auto;
+}
+
+.secondary-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transition: left 0.5s ease-in-out;
+}
+
+.secondary-slider img.active {
+  left: 0;
+}
+
+.secondary-slider img.prev {
+  left: -100%;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .logo {
+    height: 60px;
+  }
+  .features {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .feature-item {
+    min-width: 100%;
+  }
+  .products {
+    grid-template-columns: 1fr;
+  }
+  .secondary-slider {
+    height: 150px;
+  }
+}
+/* Footer */
+.site-footer {
+  background-color: #292a86; /* Bleu roi */
+  color: white;
+  padding-top: 0;
+  margin-top: 40px;
+  font-family: Arial, sans-serif;
+}
+
+/* Newsletter en haut */
+.newsletter-top {
+  background-color: #1a1b6b; /* Bleu légèrement plus foncé */
+  padding: 30px 20px;
+  margin-bottom: 30px;
+}
+
+.newsletter-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.newsletter-container h3 {
+  color: #fff200; /* Jaune */
+  font-size: 22px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.newsletter-form {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+}
+
+.newsletter-form input {
+  padding: 12px 15px;
+  border: none;
+  flex-grow: 1;
+  font-size: 16px;
+}
+
+.newsletter-form button {
+  padding: 12px 25px;
+  background-color: #fff200; /* Jaune */
+  color: #292a86; /* Bleu roi */
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.newsletter-form button:hover {
+  background-color: #e6d900;
+}
+
+/* Contenu principal du footer */
+.footer-main {
+  padding: 0 20px 20px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 30px;
+}
+
+.footer-section h3 {
+  color: #fff200; /* Jaune */
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section li {
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-size: 14px;
+}
+
+.footer-section a:hover {
+  color: #fff200; /* Jaune au survol */
+}
+
+/* Footer bottom */
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  margin-bottom: 15px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: #fff200;
+}
+
+.footer-links span {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.copyright-notice {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  margin: 10px 0;
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+  }
+  
+  .newsletter-form button {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
